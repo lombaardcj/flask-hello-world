@@ -1,6 +1,10 @@
 from flask import Flask
+from scraper import scrape
+import json
+
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    output = scrape()
+    return print(json.dumps(output))
